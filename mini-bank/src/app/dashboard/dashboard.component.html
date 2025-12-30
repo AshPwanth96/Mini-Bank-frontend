@@ -1,0 +1,25 @@
+<h2>Bank Dashboard</h2>
+
+<div *ngIf="user">
+
+    <p><strong>Welcome</strong>{{user.name}}</p>
+    <p><strong>Email</strong>{{user.email}}</p>
+    <p><strong>Account Number</strong>{{user.accountNumber}}</p>
+    <p><strong>Account Type</strong>Savings</p>
+    <p><strong>Balance</strong>₹{{user.balance}}</p>
+    <p><strong>Last Login:</strong>{{user.lastLogin}}</p>
+
+    <hr>
+
+    <h3>Transactions</h3>
+
+    <label>Amount</label>
+    <input type="number" [(ngModel)]="amount" name="transactionAmount"><br><br>
+
+
+    <button (click)="withdraw()">withdraw</button>
+    <button (click)="deposit()">Deposit</button><br><br>
+
+    <button (click)="logout()">Logout</button>
+
+</div>
