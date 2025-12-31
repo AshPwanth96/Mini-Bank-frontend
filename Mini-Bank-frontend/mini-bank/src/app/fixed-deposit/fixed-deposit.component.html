@@ -1,0 +1,48 @@
+<h2>Fixed Deposit</h2>
+
+    <div *ngIf="user.fixedDeposit.length>0; else noFd">
+
+        <div *ngFor="let fd of user.fixedDeposit; let i = index">
+
+              <p><strong>FD Amount: </strong>₹{{fd.fdAmount}}</p>
+                <p><strong>Interest: </strong>{{fd.interestRate}}%</p>
+                <p><strong>Years: </strong>{{fd.years}}</p>
+                <p><strong>Start Date: </strong>{{fd.startingDate|date}}</p>
+                <p><strong>Maturity Date: </strong>{{fd.maturityDate|date}}</p>
+                <p><strong>Maturity Amount</strong> ₹{{fd.maturityAmount}}</p><br>
+
+                <button (click)="closeFd(i)">Close FD</button>
+
+        </div>
+
+    </div>
+
+    <ng-template #noFd>
+        <h3>No Fixed Deposit is There in this account</h3>
+
+    </ng-template>
+
+ 
+
+    <hr>
+
+   
+        <h3>Create Fixed Deposit</h3>
+    <form>
+          
+
+        <label>FD Amount (minimum 10000) :</label>
+        <input type="number" [(ngModel)]="fdAmount" name="fdAmount"><br><br>
+
+        <label>Interest Rate :</label>
+        <input type="number" [(ngModel)]="interestRate" name="interestRate"><br><br>
+
+        <label>Duration Years :</label>
+        <input type="number" [(ngModel)]="years" name="years"><br><br>
+
+
+        <button (click)="fixedDeposit()">Create FD</button>
+
+    </form><br>
+
+    <button (click)="goBack()">Go Back</button>
