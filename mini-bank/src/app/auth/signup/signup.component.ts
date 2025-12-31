@@ -51,11 +51,13 @@ export class SignupComponent implements OnInit {
     }
 
     const newUser = {
+      id: Date.now(),
       name: this.name,
       email: this.email,
       password: this.password,
       balance: this.balance,
       accountNumber : 'SB'+Math.floor(1000000 +Math.random()*9000000),
+      fixedDeposit: [],
       lastLogin : null
     }
 
