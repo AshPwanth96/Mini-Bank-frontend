@@ -1,0 +1,16 @@
+
+
+<nav>
+<ng-container *ngIf="authService.isLoggedIn(); else loggedOut">
+<a routerLink="/dashboard">Dashboard</a>
+<a routerLink="/fd">fixedDeposit</a>
+<a routerLink="/nominee">Add nominee</a>
+<a routerLink="/login" (click)="authService.logout()">Logout</a>
+
+</ng-container>
+
+<ng-template #loggedOut>
+    <a routerLink="/login">Login</a>
+<a routerLink="/signup">Signup</a>
+</ng-template>
+</nav>

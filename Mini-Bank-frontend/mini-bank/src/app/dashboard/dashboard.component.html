@@ -7,7 +7,7 @@
     <p><strong>Account Number : </strong>{{user.accountNumber}}</p>
     <p><strong>Account Type : </strong>Savings</p>
     <p><strong>Balance :</strong>₹{{user.balance}}</p>
-    <p><strong>Last Login :</strong>{{user.lastLogin}}</p>
+    <p><strong>Last Login :</strong>{{user.lastLogin|date}}</p>
 
     <hr>
 
@@ -20,11 +20,8 @@
     <button (click)="withdraw()">withdraw</button>
     <button (click)="deposit()">Deposit</button><br><br>
 
-    <hr>
 
 
-    <button (click)="logout()">Logout</button>
-    <button (click)="goToFd()">fixedDeposit</button>
 
     
 </div>

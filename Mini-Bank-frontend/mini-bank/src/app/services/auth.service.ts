@@ -21,5 +21,14 @@ export class AuthService {
   
 
   }
+
+  logout(){
+    localStorage.removeItem('currentUser');
+  }
+
+  isLoggedIn(): boolean{
+    return !!localStorage.getItem('currentUser');
+
+  }
 }
 

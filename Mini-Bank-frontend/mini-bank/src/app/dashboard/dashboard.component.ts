@@ -55,14 +55,7 @@ export class DashboardComponent implements OnInit {
     this.updateService.updateUser();
   }
 
-  logout(){
-    localStorage.removeItem('currentUser');
-    this.route.navigate(['/login'])
-  }
 
-  goToFd(){
-    this.route.navigate(['/fd'])
-  }
 
 
   }
